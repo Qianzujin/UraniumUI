@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ResourceDictionary xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UraniumUI.Material.TemplateResources.CardViewResource"
+             xmlns:local="clr-namespace:UraniumUI.Material.TemplateResources">
+    <ControlTemplate x:Key="CardViewControlTemplate">
+        <Border BindingContext="{Binding Source={RelativeSource TemplatedParent}}"
+                BackgroundColor="{Binding CardColor}"
+                StrokeThickness="4"
+                StrokeShape="RoundRectangle 40,0,0,40"
+                Padding="16,8"
+                HorizontalOptions="Center">
+            <Border.Stroke>
+                <LinearGradientBrush EndPoint="0,1">
+                    <GradientStop Color="Orange"
+                          Offset="0.1" />
+                    <GradientStop Color="Brown"
+                          Offset="1.0" />
+                </LinearGradientBrush>
+            </Border.Stroke>
+
+            <Border.Shadow>
+                <Shadow Brush="Black"
+                Offset="2,2"
+                Opacity="0.8" />
+            </Border.Shadow>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="75" />
+                    <RowDefinition Height="4" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="200" />
+                </Grid.ColumnDefinitions>
+
+                <Image Grid.Column="0" Grid.Row="0" Source="{Binding CardImage}"
+                    WidthRequest="100"
+                    HeightRequest="100"
+                    Aspect="AspectFill">
+                    <Image.Clip>
+                        <EllipseGeometry Center="40,40"
+                         RadiusX="30"
+                         RadiusY="30" />
+                    </Image.Clip>
+                    <Image.Shadow>
+                        <Shadow Brush="Black"
+                        Offset="1,1"
+                        Opacity="0.05" />
+                    </Image.Shadow>
+                </Image>
+                <Label Grid.Column="1"
+                    Text="{Binding CardTitle}"
+                    FontAttributes="Bold"
+                    FontSize="18"
+                    VerticalTextAlignment="Center"
+                    HorizontalTextAlignment="Start" />
+                <BoxView Grid.Row="1"
+                    Grid.ColumnSpan="2"
+                    BackgroundColor="{Binding BorderColor}"
+                    HeightRequest="2"
+                    HorizontalOptions="Fill" />
+                <Label Grid.Row="2"
+                    Grid.ColumnSpan="2"
+                    Text="{Binding CardDescription}"
+                    VerticalTextAlignment="Start"
+                    VerticalOptions="Fill"
+                    HorizontalOptions="Fill" />
+            </Grid>
+        </Border>
+    </ControlTemplate>
+</ResourceDictionary>

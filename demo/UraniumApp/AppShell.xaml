@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="UraniumApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:UraniumApp"
+    xmlns:pages="clr-namespace:UraniumApp.Pages"
+    xmlns:m="clr-namespace:UraniumUI.Icons.MaterialIcons;assembly=UraniumUI.Icons.MaterialIcons"
+    xmlns:bsheet="clr-namespace:UraniumApp.Pages.BottomSheets"
+    xmlns:backdrop="clr-namespace:UraniumApp.Pages.Backdrops"
+    xmlns:dataGrid="clr-namespace:UraniumApp.Pages.DataGrids"
+    xmlns:tabs="clr-namespace:UraniumApp.Pages.TabViews"
+    Shell.FlyoutBehavior="{OnIdiom Desktop=Locked, Default=Flyout}">
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="MainPage" ContentTemplate="{DataTemplate local:MainPage}">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="MaterialOutlined" Glyph="{x:Static m:MaterialOutlined.Home}" Color="{StaticResource Primary}"/>
+            </ShellContent.Icon>
+        </ShellContent>
+    </FlyoutItem>
+
+    <!--<Tab Title="Bottom Sheets">
+            <Tab.Icon>
+                <FontImageSource FontFamily="FASolid" Glyph="{x:Static fa:Solid.PersonArrowUpFromLine}" Color="{StaticResource Primary}" />
+            </Tab.Icon>
+            <ShellContent Title="Bottom Sheets" ContentTemplate="{DataTemplate bsheet:BottomSheetsIndexPage}"/>
+        </Tab>-->
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+
+        <ShellContent Title="Bottom Sheets" ContentTemplate="{DataTemplate bsheet:BottomSheetsIndexPage}">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="MaterialOutlined" Glyph="{x:Static m:MaterialOutlined.Arrow_upward}" Color="{StaticResource Primary}" />
+            </ShellContent.Icon>
+        </ShellContent>
+
+        <ShellContent Title="Backdrop" ContentTemplate="{DataTemplate backdrop:BackdropsIndexPage}">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="MaterialOutlined" Glyph="{x:Static m:MaterialOutlined.Arrow_downward}" Color="{StaticResource Primary}" />
+            </ShellContent.Icon>
+        </ShellContent>
+    </FlyoutItem>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems" Title="Infrastructural" >
+
+        <ShellContent Title="DataGrid" ContentTemplate="{DataTemplate dataGrid:DataGridsIndexPage}">
+            <ShellContent.Icon>
+                <FontImageSource FontFamily="MaterialOutlined" Glyph="{x:Static m:MaterialOutlined.Grid_3x3}" Color="{StaticResource Primary}" />
+            </ShellContent.Icon>
+        </ShellContent>
+        <ShellContent 
+            Title="TabView" 
+            Icon="{FontImageSource FontFamily=MaterialOutlined, Glyph={x:Static m:MaterialOutlined.Tab}, Color={StaticResource Primary}}"
+            ContentTemplate="{DataTemplate tabs:TabViewIndexPage}"/>
+        <ShellContent 
+            Title="TreeView" 
+            Icon="{FontImageSource FontFamily=MaterialOutlined, Glyph={x:Static m:MaterialOutlined.List_alt}, Color={StaticResource Primary}}"
+            ContentTemplate="{DataTemplate pages:TreeViewPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent 
+            Title="Elevation" 
+            Icon="{FontImageSource FontFamily=MaterialOutlined, Glyph={x:Static m:MaterialOutlined.Vertical_shades}, Color={StaticResource Primary}}"
+            ContentTemplate="{DataTemplate pages:ElevationsPage}"/>
+        <ShellContent 
+            Title="Dialogs" 
+            Icon="{FontImageSource FontFamily=MaterialOutlined, Glyph={x:Static m:MaterialOutlined.Auto_awesome_motion}, Color={StaticResource Primary}}"
+            ContentTemplate="{DataTemplate pages:DialogsPage}"/>
+        <ShellContent 
+            Title="Buttons" 
+            Icon="{FontImageSource FontFamily=MaterialOutlined, Glyph={x:Static m:MaterialOutlined.All_inbox}, Color={StaticResource Primary}}"
+            ContentTemplate="{DataTemplate pages:ButtonsPage}"/>        
+        <ShellContent 
+            Title="CheckBox"
+            Icon="{FontImageSource FontFamily=MaterialOutlined, Glyph={x:Static m:MaterialOutlined.Check_box}, Color={StaticResource Primary}}"
+            ContentTemplate="{DataTemplate pages:CheckBoxesPage}"/>
+        <ShellContent 
+            Title="RadioButton" 
+            Icon="{FontImageSource FontFamily=MaterialOutlined, Glyph={x:Static m:MaterialOutlined.Radio_button_checked}, Color={StaticResource Primary}}"
+            ContentTemplate="{DataTemplate pages:RadioButtonsPage}"/>
+        <ShellContent 
+            Title="InputField" 
+            Icon="{FontImageSource FontFamily=MaterialOutlined, Glyph={x:Static m:MaterialOutlined.Short_text}, Color={StaticResource Primary}}"
+            ContentTemplate="{DataTemplate pages:InputFieldsPage}"/>
+    </FlyoutItem>
+    <FlyoutItem FlyoutDisplayOptions="AsSingleItem" Title="Validations">
+        <ShellContent 
+            Title="InputField" 
+            Icon="{FontImageSource FontFamily=MaterialOutlined, Glyph={x:Static m:MaterialOutlined.Warning}, Color={StaticResource Primary}}"
+            ContentTemplate="{DataTemplate pages:ValidationsPage}"/>
+    </FlyoutItem>
+
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+
+    </FlyoutItem>
+
+    <!--
+        Shell has implicit conversion operators that enable the Shell visual hierarchy to be simplified.
+        This is possible because a subclassed Shell object can only ever contain a FlyoutItem object or a TabBar object,
+        which can only ever contain Tab objects, which can only ever contain ShellContent objects.
+
+        The implicit conversion automatically wraps the ShellContent objects below in Tab objects.
+        -->
+        <!--<ShellContent Title="Monkeys"
+                      Icon="monkey.png"
+                      ContentTemplate="{DataTemplate views:MonkeysPage}" />
+        <ShellContent Title="Elephants"
+                      Icon="elephant.png"
+                      ContentTemplate="{DataTemplate views:ElephantsPage}" />
+        <ShellContent Title="Bears"
+                      Icon="bear.png"
+                      ContentTemplate="{DataTemplate views:BearsPage}" />-->
+
+</Shell>
