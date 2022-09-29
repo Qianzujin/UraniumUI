@@ -18,7 +18,6 @@
                 <HorizontalStackLayout>
                     <Button StyleClass="ElevatedButton" Text="Elevated Button" />
                     <Button StyleClass="ElevatedButton" IsEnabled="False" Text="Elevated Button (Disabled)" />
-
                 </HorizontalStackLayout>
             </ScrollView>
             <BoxView StyleClass="Divider" Margin="0" />
@@ -57,7 +56,7 @@
             <ScrollView Orientation="Horizontal">
                 <HorizontalStackLayout>
                     <material:CardView
-                           CardColor="#caf1f2"           
+                           CardColor="#caf1f2"
                            CardTitle="John Doe"
                            CardImage="dog.jpg"
                            CardDescription="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla elit dolor, convallis non interdum."

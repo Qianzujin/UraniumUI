@@ -6,5 +6,4 @@ public partial class ButtonsPage : ContentPage
     {
         InitializeComponent();
     }
-
 }
